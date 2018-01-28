@@ -11,6 +11,7 @@ $notification_token = $_POST['notification_token'];
 $amount = 1;
 
 try {
+  print_r ($notification_token);
     if ($api_version == '1.3') {
         $configuration = new Khipu\Configuration();
         $configuration->setSecret($secret);
@@ -26,10 +27,10 @@ try {
                 // marcar el pago como completo y entregar el bien o servicio
             }
         } else {
-            // receiver_id no coincide
+            echo 'receiver_id no coincide';
         }
     } else {
-        // Usar versión anterior de la API de notificación
+        echo 'Usar versión anterior de la API de notificación';
     }
 } catch (\Khipu\ApiException $exception) {
     print_r($exception->getResponseObject());
