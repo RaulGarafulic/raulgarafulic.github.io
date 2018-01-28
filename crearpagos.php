@@ -29,10 +29,10 @@
     echo $xml;
     $opts = array (
       "transaction_id" => "MTI-100",
-      "return_url" => "http://localhost/2activecampaign/crearpago3.php",
+      "return_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php",
       "cancel_url" => "http://mi-ecomerce.com/backend/cancel",
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
-      "notify_url" => "http://localhost/2activecampaign/recibirpago.php",
+      "notify_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php",
       "notify_api_version" => "1.3",
       "custom" => $xml
     );
