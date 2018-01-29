@@ -37,7 +37,7 @@
       $opts //campos opcionales
     );
     $url = "Location: " . $response->getPaymentUrl();
-    print_r($response->payment_url);
+    // print_r($response->payment_url);
     header($url, true, 301);
 
   } catch (\Khipu\ApiException $e) {
