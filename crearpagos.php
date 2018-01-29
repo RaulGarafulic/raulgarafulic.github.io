@@ -8,13 +8,8 @@
   $configuration = new Khipu\Configuration();
   $configuration->setReceiverId($receiver_id);
   $configuration->setSecret($secret);
-  // $configuration->setDebug(true);
 
   $client = new Khipu\ApiClient($configuration);
-  // $config = $client->getConfig();
-  // $serializer = $client->getSerializer();
-  // echo $config;
-  // echo $serializer;
   $payments = new Khipu\Client\PaymentsApi($client);
 
   try {
@@ -42,7 +37,7 @@
       $opts //campos opcionales
     );
     $url = "Location: " . $response->getPaymentUrl();
-    // print_r($response->payment_url);
+    print_r($response->payment_url);
     header($url, true, 301);
 
   } catch (\Khipu\ApiException $e) {
