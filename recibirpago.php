@@ -8,6 +8,9 @@ $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
 $api_version = $_POST['api_version'];
 $notification_token = $_POST['notification_token'];
 // $notification_token = 'obtener-desde-los-parametros'; //Parámetro notification_token
+echo 'apiV is: ' . $api_version;
+print_r ($notification_token);
+var_dump($_POST);
 $amount = 1;
 
 try {

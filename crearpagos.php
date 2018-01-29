@@ -15,13 +15,6 @@
   try {
     $date = new DateTime ('tomorrow');
     echo $date->format('d/m/Y');
-    $mail = "rgarafulicm@gmail.com";
-    $xml = "
-      <items>
-          <mail>$mail</mail>
-      </items>
-    ";
-    echo $xml;
     $opts = array (
       "transaction_id" => "MTI-100",
       "return_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php",
@@ -29,7 +22,7 @@
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
       "notify_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php",
       "notify_api_version" => "1.3",
-      "custom" => $xml
+      "payer_email" => "hola@asdf.com"
     );
     $response = $payments->paymentsPost("Compra de prueba de la API", //Motivo de la compra
       "BOB", //Moneda
