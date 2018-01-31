@@ -1,7 +1,7 @@
 <?php
 
 // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
-$url = 'https://acme4257.api-us1.com';
+$url = 'https://acme80851.api-us1.com';
 
 // optional custom field search: provide field ID, and search query (this searches all custom field values)
 /*
@@ -14,7 +14,7 @@ $params = array(
 
   // the API Key can be found on the "Your Settings" page under the "API" tab.
   // replace this with your API Key
-  'api_key' => '71c07c7865033e51fbb323fce74a4f600720bd1b3c507d2d95336d68f59340fc2967cb16',
+  'api_key' => '272d155e8a31b110c36cc8685525f15590e8697c6ef9004feffe1c9c60f3267d978af4d3',
 
   'api_action' => 'contact_list',
 

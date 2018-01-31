@@ -5,12 +5,16 @@ require __DIR__ . '/vendor/autoload.php';
 $receiver_id = 162163;
 $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
 
-$api_version = $_POST['api_version'];
-$notification_token = $_POST['notification_token'];
+$api_version = $_POST["api_version"];
+$notification_token = $_POST["notification_token"];
 // $notification_token = 'obtener-desde-los-parametros'; //Parámetro notification_token
 echo 'apiV is: ' . $api_version;
 print_r ($notification_token);
 var_dump($_POST);
+$myfile = fopen("newfile.txt", "w");
+$txt = 'hola' . $api_version . 'chau' . $notification_token;
+fwrite($myfile, $txt);
+fclose($myfile);
 $amount = 1;
 
 try {

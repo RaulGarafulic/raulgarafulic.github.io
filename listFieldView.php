@@ -11,7 +11,7 @@ $params = array(
     'api_key'      => '272d155e8a31b110c36cc8685525f15590e8697c6ef9004feffe1c9c60f3267d978af4d3',
 
     // this is the action that fetches a list info based on the ID you provide
-    'api_action'   => 'list_view',
+    'api_action'   => 'list_field_view',
 
     // define the type of output you wish to get back
     // possible values:
@@ -22,8 +22,9 @@ $params = array(
     //                 a native unserialize() function
     'api_output'   => 'serialize',
 
-    // ID of the list you wish to fetch
-    'id'           => 1,
+    // ID(s) of the contact custom field(s) you wish to fetch - comma-separate for more than one
+    // You can also pass the personalization tag here, IE: %PERS_7%
+    'ids'           => 'all',
 );
 
 // This section takes the input fields and converts them to the proper format

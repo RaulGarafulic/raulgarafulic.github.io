@@ -1,4 +1,8 @@
 <?php
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+  $data = json_decode(file_get_contents("php://input"));
+
   // Debemos conocer el $receiverId y el $secretKey de ante mano.
   $receiver_id = 162163;
   $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
@@ -22,7 +26,7 @@
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
       "notify_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php",
       "notify_api_version" => "1.3",
-      "payer_email" => "hola@asdf.com"
+      "payer_email" => $data->mail
     );
     $response = $payments->paymentsPost("Compra de prueba de la API", //Motivo de la compra
       "BOB", //Moneda
