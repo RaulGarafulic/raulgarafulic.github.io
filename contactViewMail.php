@@ -4,11 +4,11 @@
 	$data = json_decode(file_get_contents("php://input"));
 
 
-  $url = 'https://acme80851.api-us1.com';
+  $url = 'https://acme13810.api-us1.com';
   // $url = 'https://paginasiete.api-us1.com';
   $params = array(
     // 'api_key'      => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508', //p7
-    'api_key'      => '272d155e8a31b110c36cc8685525f15590e8697c6ef9004feffe1c9c60f3267d978af4d3',
+    'api_key'      => 'c14306a12b1aa7f1ef71961c44f51e581ab07dc4eea3f2863cce6d960f668dcd5c610cd3',
     'api_action'   => 'contact_view_email',
     'api_output'   => 'json',
     'email'        => $data->mail,
@@ -40,9 +40,9 @@
   if ( !$response ) {
       die('Nothing was returned. Do you have a connection to Email Marketing server?');
   }
-$result = json_decode($response, true);
+  $result = json_decode($response, true);
 
-// The entire result printed out
-echo json_encode ($result);
+  // The entire result printed out
+  echo json_encode ($result);
 
 ?>
