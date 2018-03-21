@@ -1,6 +1,8 @@
 <?php
-  header("Access-Control-Allow-Origin: *");
-  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+  header("Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com");
+  header("Access-Control-Allow-Methods: POST");
+  header("Access-Control-Allow-Headers: Content-Type, Authorization");
+
   $curl = curl_init();
 
   curl_setopt_array($curl, array(

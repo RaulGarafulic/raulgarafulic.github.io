@@ -1,6 +1,7 @@
 <?php
-  header("Access-Control-Allow-Origin: *");
-  header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+  header("Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com");
+  header("Access-Control-Allow-Methods: POST");
+  header("Access-Control-Allow-Headers: Content-Type, Authorization");
   $data = json_decode(file_get_contents("php://input"));
   $receiver_id = 162163;
   $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
