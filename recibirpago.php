@@ -1,6 +1,5 @@
 <?php
-  header("Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com");
-  header("Access-Control-Allow-Methods: POST");
+  header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
 require __DIR__ . '/vendor/autoload.php';
 
