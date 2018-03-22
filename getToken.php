@@ -1,5 +1,5 @@
 <?php
-  header("Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com:443");
+  header("Access-Control-Allow-Origin: *");
   header("Access-Control-Allow-Methods: POST");
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
   header("Content-Type: application/json");
