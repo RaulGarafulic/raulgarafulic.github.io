@@ -1,7 +1,9 @@
 <?php
+  header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
+  header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
-$url = 'https://acme13810.api-us1.com';
+$url = 'https://paginasiete.api-us1.com';
 
 // optional custom field search: provide field ID, and search query (this searches all custom field values)
 /*
@@ -14,80 +16,12 @@ $params = array(
 
   // the API Key can be found on the "Your Settings" page under the "API" tab.
   // replace this with your API Key
-  'api_key' => 'c14306a12b1aa7f1ef71961c44f51e581ab07dc4eea3f2863cce6d960f668dcd5c610cd3',
+  'api_key' => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508',
 
   'api_action' => 'contact_list',
-
-  // define the type of output you wish to get back
-  // possible values:
-  // - 'xml'  :      you have to write your own XML parser
-  // - 'json' :      data is returned in JSON format and can be decoded with
-  //                 json_decode() function (included in PHP since 5.2.0)
-  // - 'serialize' : data is returned in a serialized format and can be decoded with
-  //                 a native unserialize() function
   'api_output' => 'json',
-
-  // a comma-separated list of IDs of contacts you wish to fetch
   'ids' => '1,2,3,4,5',
-
-  // filters (optional): supply filters that will narrow down the results
-  // if any filters are set, don't pass the 'ids' parameter above
-
-    // Email address: exact match
-    //'filters[email]' => 'mike@test.com',
-
-    // List ID's associated with contact: exact match. Provide multiple values (performs an OR operation) like this: '4,7'
-    //'filters[listid]' => '4',
-
-    // First Name: exact match. Provide multiple values (performs an OR operation) like this: 'mike,john'
-    //'filters[first_name]' => 'mike',
-
-    // Last Name: exact match. Provide multiple values (performs an OR operation) like this: 'smith,jones'
-    //'filters[last_name]' => 'jones',
-
-    // Organization: exact match.
-    //'filters[organization]' => 'ABC Inc.',
-
-    // Contact ID: only include contacts with an ID greater than some integer
-    //'filters[id_greater]' => '44',
-
-    // Contact ID: only include contacts with an ID less than some integer
-    //'filters[id_less]' => '44',
-
-    // Segment ID to return only contacts that match a list segment
-    //'filters[segmentid]' => '13',
-
-    // Status of contact: exact match. Provide multiple values (performs an OR operation) like this: '0,1' (0: unconfirmed, 1: active, 2: unsubscribed)
-    //'filters[status]' => '1',
-
-    // Filter on contact tag using either the tag id or the tag name. Only one tag filter is allowed. Use a list segment for filtering based on multiple tags.
-    //'filters[tagid]' => '21',
-    // or
-    //'filters[tagname]' => 'my tag',
-
-    // Contacts ON (or AT) a specific date/time (set status param): pattern match - provide any portion of MySQL-formatted date/time string
-    //'filters[datetime]' => '2009-10-22',
-
-    // Contacts *since* a specified date in the past (set status param): exact match - provide MySQL-formatted date/time string
-    //'filters[since_datetime]' => '2009-10-22 00:00:00',
-
-    // Contacts *until* a specified date (set status param): exact match - provide MySQL-formatted date/time string
-    //'filters[until_datetime]' => '2009-10-23 00:00:00',
-
-    // Filter on custom field values (include the custom field ID, or personalization tag surrounded by percent signs)
-    //'filters[fields][%PERS_1%]' => 'value1 match',
-
-    // Filter on custom field values (include the custom field ID, or personalization tag surrounded by percent signs)
-    //'filters[fields][%PERS_2%]' => 'value2 match',
-
-  // whether or not to return ALL data, or an abbreviated portion (set to 0 for abbreviated)
-  'full' => 0,
-
-  // optional: change how results are sorted (default is below)
-  //'sort' => 'id', // possible values: id, datetime, first_name, last_name
-  //'sort_direction' => 'DESC', // ASC or DESC
-  //'page' => 2, // pagination - results are limited to 20 per page, so specify what page to view (default is 1)
-
+  'full' => 0
 );
 
 // This section takes the input fields and converts them to the proper format

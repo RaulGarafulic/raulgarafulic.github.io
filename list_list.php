@@ -1,29 +1,15 @@
 <?php
 
 // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
-$url = 'https://acme13810.api-us1.com';
+$url = 'https://paginasiete.api-us1.com';
 
 $params = array(
-
-  // the API Key can be found on the "Your Settings" page under the "API" tab.
-  // replace this with your API Key
-  'api_key' => 'c14306a12b1aa7f1ef71961c44f51e581ab07dc4eea3f2863cce6d960f668dcd5c610cd3',
-
-
-    // this is the action that fetches a list info based on the ID you provide
-    'api_action'   => 'list_list',
-
-    // define the type of output you wish to get back
-    // possible values:
-    // - 'xml'  :      you have to write your own XML parser
-    // - 'json' :      data is returned in JSON format and can be decoded with
-    //                 json_decode() function (included in PHP since 5.2.0)
-    // - 'serialize' : data is returned in a serialized format and can be decoded with
-    //                 a native unserialize() function
-    'api_output'   => 'json',
+  'api_key' => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508',
+  'api_action'   => 'list_list',
+  'api_output'   => 'json',
 
     // a comma-separated list of IDs of lists you wish to fetch
-    'ids'          => '1,2,3,4,5',
+    'ids'          => 'all',
 
     // filters: supply filters that will narrow down the results
     //'filters[name]'      => 'General',  // perform a pattern match (LIKE) for List Name

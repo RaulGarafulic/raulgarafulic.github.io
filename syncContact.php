@@ -1,6 +1,4 @@
 <?php
-  header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
-  header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // By default, this sample code is designed to get the result from your ActiveCampaign installation and print out the result
 $url = 'https://paginasiete.api-us1.com';
@@ -12,8 +10,8 @@ $params = array(
     // replace this with your API Key
     'api_key'      => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508',
 
-    // this is the action that fetches a list info based on the ID you provide
-    'api_action'   => 'list_field_view',
+    // this is the action that adds a contact
+    'api_action'   => 'contact_sync',
 
     // define the type of output you wish to get back
     // possible values:
@@ -23,16 +21,45 @@ $params = array(
     // - 'serialize' : data is returned in a serialized format and can be decoded with
     //                 a native unserialize() function
     'api_output'   => 'serialize',
+);
 
-    // ID(s) of the contact custom field(s) you wish to fetch - comma-separate for more than one
-    // You can also pass the personalization tag here, IE: %PERS_7%
-    'ids'           => 'all',
+// here we define the data we are posting in order to perform an update
+$post = array(
+    'email'                    => 'rgarafulicm@gmail.com',
+    // 'first_name'               => 'FirstName',
+    // 'last_name'                => 'LastName',
+    //'ip4'                    => '127.0.0.1',
+    // 'phone'                    => '+1 312 201 0300',
+    // 'orgname'                  => 'Acme, Inc.',
+    'tags'                     => 'api',
+
+    // any custom fields
+    'field[21,0]'           => 'Factura pagada', // where 345 is the field ID
+    //'field[%PERS_1%,0]'      => 'field value', // using the personalization tag instead
+
+    // assign to lists:
+    // 'p[123]'                   => 123, // example list ID (REPLACE '123' WITH ACTUAL LIST ID, IE: p[5] = 5)
+    // 'status[123]'              => 1, // 1: active, 2: unsubscribed (REPLACE '123' WITH ACTUAL LIST ID, IE: status[5] = 1)
+    //'form'          => 1001, // Subscription Form ID, to inherit those redirection settings
+    //'noresponders[123]'      => 1, // uncomment to set "do not send any future responders"
+    //'sdate[123]'             => '2009-12-07 06:00:00', // Subscribe date for particular list - leave out to use current date/time
+    // use the folowing only if status=1
+    // 'instantresponders[123]' => 1, // set to 0 to if you don't want to sent instant autoresponders
+    //'lastmessage[123]'       => 1, // uncomment to set "send the last broadcast campaign"
+
+    //'p[]'                    => 345, // some additional lists?
+    //'status[345]'            => 1, // some additional lists?
 );
 
 // This section takes the input fields and converts them to the proper format
 $query = "";
 foreach( $params as $key => $value ) $query .= urlencode($key) . '=' . urlencode($value) . '&';
 $query = rtrim($query, '& ');
+
+// This section takes the input data and converts it to the proper format
+$data = "";
+foreach( $post as $key => $value ) $data .= urlencode($key) . '=' . urlencode($value) . '&';
+$data = rtrim($data, '& ');
 
 // clean up the url
 $url = rtrim($url, '/ ');
@@ -52,10 +79,11 @@ $api = $url . '/admin/api.php?' . $query;
 $request = curl_init($api); // initiate curl object
 curl_setopt($request, CURLOPT_HEADER, 0); // set to 0 to eliminate header info from response
 curl_setopt($request, CURLOPT_RETURNTRANSFER, 1); // Returns response data instead of TRUE(1)
+curl_setopt($request, CURLOPT_POSTFIELDS, $data); // use HTTP POST to send form data
 //curl_setopt($request, CURLOPT_SSL_VERIFYPEER, FALSE); // uncomment if you get no gateway response and are using HTTPS
 curl_setopt($request, CURLOPT_FOLLOWLOCATION, true);
 
-$response = (string)curl_exec($request); // execute curl fetch and store results in $response
+$response = (string)curl_exec($request); // execute curl post and store results in $response
 
 // additional options may be required depending upon your server configuration
 // you can find documentation on curl options at http://www.php.net/curl_setopt
@@ -91,4 +119,9 @@ echo '</pre>';
 
 // API URL that returned the result
 echo 'API URL that returned the result:<br />';
-echo $api;?>
+echo $api;
+
+echo '<br /><br />POST params:<br />';
+echo '<pre>';
+print_r($post);
+echo '</pre>';?>

@@ -19,10 +19,10 @@
     // echo $date->format('d/m/Y');
     $opts = array (
       "transaction_id" => "MTI-100",
-      "return_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php/" . $data->tok,
+      "return_url" => "https://p7vip.xyz/recibirpago.php/" . $data->tok,
       "cancel_url" => "http://www.paginasiete.bo",
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
-      "notify_url" => "http://ec2-54-94-148-223.sa-east-1.compute.amazonaws.com/recibirpago.php/" . $data->tok,
+      "notify_url" => "https://p7vip.xyz/recibirpago.php/" . $data->tok,
       "notify_api_version" => "1.3",
       "payer_email" => $data->mail
     );
