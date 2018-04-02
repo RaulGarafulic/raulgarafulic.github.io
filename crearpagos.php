@@ -19,14 +19,14 @@
     // echo $date->format('d/m/Y');
     $opts = array (
       "transaction_id" => "MTI-100",
-      "return_url" => "https://p7vip.xyz/recibirpago.php/" . $data->tok,
+      "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante" . $data->tok,
       "cancel_url" => "http://www.paginasiete.bo",
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
       "notify_url" => "https://p7vip.xyz/recibirpago.php/" . $data->tok,
       "notify_api_version" => "1.3",
       "payer_email" => $data->mail
     );
-    $response = $payments->paymentsPost("Compra de prueba de la API", //Motivo de la compra
+    $response = $payments->paymentsPost("Suscripcion del paquete " . $data->prod, //Motivo de la compra
       "BOB", //Moneda
       $data->price, //Monto
       $opts //campos opcionales

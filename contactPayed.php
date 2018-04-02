@@ -1,7 +1,7 @@
 <?php
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
-	// $contact = json_decode(file_get_contents("php://input"));
+	$contact = json_decode(file_get_contents("php://input"));
  $contact->id = 2107;//será el id del contacto IMPORTANTE PASAR
  // fecha de inicio
  // fecha fin de sus
@@ -20,10 +20,10 @@ $params = array(
   $post = array(
       'id'                       => $contact->id, // example contact ID to modify
       'tags'                     => 'api',
-      // 'field[20, $contact->id]'  => $contact->prod, // where 345 is the field ID, and DATAID is the ID of the contact's data row
+      'field[20, $contact->id]'  => $contact->prod, // where 345 is the field ID, and DATAID is the ID of the contact's data row
       'field[21, $contact->id]'  => 'Factura contabilizada',
-      // 'field[29, $contact->id]'  => $contact->ini,
-      // 'field[30, $contact->id]'  => $contact->fini,
+      'field[29, $contact->id]'  => $contact->ini,
+      'field[30, $contact->id]'  => $contact->fini,
   );
 
   // This section takes the input fields and converts them to the proper format
