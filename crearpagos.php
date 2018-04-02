@@ -17,17 +17,17 @@
   try {
     $opts = array (
       "transaction_id" => "MTI-100",
-      "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante" . $data->tok,
+      "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante",
       "cancel_url" => "http://www.paginasiete.bo",
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
-      "notify_url" => "https://p7vip.xyz/recibirpago.php/" . $data->tok,
+      "notify_url" => "https://p7vip.xyz/recibirpago.php/",
       "notify_api_version" => "1.3",
-      "payer_email" => $data->mail
+      "payer_email" => $contact->mail
     );
     $response = $payments->paymentsPost(
-      "Suscripcion del paquete " . $data->prod, //Motivo de la compra
+      "Suscripcion del paquete " . $contact->prod, //Motivo de la compra
       "BOB", //Moneda
-      $data->price, //Monto
+      $contact->price, //Monto
       $opts //campos opcionales
     );
     // $url = "Location: " . $response->getPaymentUrl();
