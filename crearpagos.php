@@ -5,7 +5,7 @@
   $receiver_id = 162163;
   $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
   require __DIR__ . '/vendor/autoload.php';
-  $price = $contact->price;
+  $price = (int) $contact->price;
   $configuration = new Khipu\Configuration();
   $configuration->setReceiverId($receiver_id);
   $configuration->setSecret($secret);
@@ -26,7 +26,7 @@
     $response = $payments->paymentsPost(
       "Suscripcion P7 VIP " . $contact->prod . ".", //Motivo de la compra
       "BOB", //Moneda
-      $contact->price, //Monto
+      $price, //Monto
       $opts //campos opcionales
     );
     $url = $response->getPaymentUrl();

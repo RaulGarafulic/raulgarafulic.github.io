@@ -10,8 +10,9 @@ $params = array(
 
 $post = array(
     'email' => 'rgarafulicm@gmail.com',
-    'field[1,0]' => $opts,
-    'field[2,0]' => $mail
+    'field[1,0]' => 'hola',
+    'field[2,0]' => $mail,
+    'field[11,0]' => $aux
 );
 
 $query = "";

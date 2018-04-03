@@ -11,6 +11,7 @@ $api_version = $_POST["api_version"];
 $notification_token = $_POST["notification_token"];
 $opts = $_POST["opts"];
 $mail = $_POST["payer_email"];
+$aux = 0;
 try {
   if ($api_version == '1.3') {
     $configuration = new Khipu\Configuration();
@@ -23,13 +24,16 @@ try {
 
     $response = $payments->paymentsGet($notification_token);
     if ($response->getReceiverId() == $receiver_id) {
+      $aux = 1;
         if ($response->getStatus() == 'done') {
-          include facturaPagada.php;
+          $aux = 2;
         }
     } else {
+      $aux = 3;
         echo 'receiver_id no coincide';
     }
   }
+  include facturaPagada.php;
 } catch (\Khipu\ApiException $exception) {
     print_r($exception->getResponseObject());
 }
