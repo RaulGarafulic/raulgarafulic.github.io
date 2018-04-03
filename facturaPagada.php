@@ -1,7 +1,9 @@
 <?php
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
+	$contact = json_decode(file_get_contents("php://input"));
 $url = 'https://paginasiete.api-us1.com';
+
 $params = array(
     'api_key'      => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508',
     'api_action'   => 'contact_sync',
@@ -9,10 +11,11 @@ $params = array(
 );
 
 $post = array(
-    'email' => 'rgarafulicm@gmail.com',
-    'field[1,0]' => 'hola',
-    'field[2,0]' => $mail,
-    'field[11,0]' => $aux
+    'email' => $contact->mail,
+    'field[20,0]' => $contact->prod,
+    'field[21,0]' => 'Factura contabilizada',
+    'field[29,0]' => $contact->ini,
+    'field[30,0]' => $contact->fini
 );
 
 $query = "";
