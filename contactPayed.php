@@ -2,36 +2,26 @@
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
 	$contact = json_decode(file_get_contents("php://input"));
- $contact->id = 2107;//será el id del contacto IMPORTANTE PASAR
- // fecha de inicio
- // fecha fin de sus
- // factura contabilizada
-  // $url = 'https://acme13810.api-us1.com';
   $url = 'https://paginasiete.api-us1.com';
 
-
-$params = array(
+  $params = array(
     'api_key'      => 'efbcb2030498e0239577a6a77e125b4b6b3f9a3e1ee598642063f02abeb034efdc2a1508',
     'api_action'   => 'contact_edit',
     'api_output'   => 'serialize'
-);
-
-  // here we define the data we are posting in order to perform an update
-  $post = array(
-      'id'                       => $contact->id, // example contact ID to modify
-      'tags'                     => 'api',
-      'field[20, $contact->id]'  => $contact->prod, // where 345 is the field ID, and DATAID is the ID of the contact's data row
-      'field[21, $contact->id]'  => 'Factura contabilizada',
-      'field[29, $contact->id]'  => $contact->ini,
-      'field[30, $contact->id]'  => $contact->fini,
   );
 
-  // This section takes the input fields and converts them to the proper format
+  $post = array(
+    'id'                       => $contact->id, // example contact ID to modify
+    'tags'                     => 'api',
+    'field[20, $contact->id]'  => $contact->prod, // where 345 is the field ID, and DATAID is the ID of the contact's data row
+    'field[21, $contact->id]'  => 'Factura contabilizada',
+    'field[29, $contact->id]'  => $contact->ini,
+    'field[30, $contact->id]'  => $contact->fini,
+  );
+
   $query = "";
   foreach( $params as $key => $value ) $query .= urlencode($key) . '=' . urlencode($value) . '&';
   $query = rtrim($query, '& ');
-
-  // This section takes the input data and converts it to the proper format
   $data = "";
   foreach( $post as $key => $value ) $data .= urlencode($key) . '=' . urlencode($value) . '&';
   $data = rtrim($data, '& ');

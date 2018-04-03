@@ -5,7 +5,7 @@
   $receiver_id = 162163;
   $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
   require __DIR__ . '/vendor/autoload.php';
-
+  $price = $contact->price;
   $configuration = new Khipu\Configuration();
   $configuration->setReceiverId($receiver_id);
   $configuration->setSecret($secret);
@@ -24,16 +24,15 @@
       "payer_email" => $contact->mail
     );
     $response = $payments->paymentsPost(
-      "Suscripcion P7 VIP.", //Motivo de la compra
+      "Suscripcion P7 VIP " . $contact->prod . ".", //Motivo de la compra
       "BOB", //Moneda
       $contact->price, //Monto
       $opts //campos opcionales
     );
-    // $url = "Location: " . $response->getPaymentUrl();
     $url = $response->getPaymentUrl();
     echo $url;
     // header($url, true, 301);
-  //
+
   } catch (\Khipu\ApiException $e) {
       echo print_r($e->getResponseBody(), TRUE);
   }
