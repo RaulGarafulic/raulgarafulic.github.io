@@ -19,7 +19,7 @@
       "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante",
       "cancel_url" => "http://www.paginasiete.bo",
       "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
-      "notify_url" => "https://p7vip.xyz/recibirpago.php/",
+      "notify_url" => "https://p7vip.xyz/recibirpago.php?mail=".$contact->mail,
       "notify_api_version" => "1.3",
       "payer_email" => $contact->mail
     );

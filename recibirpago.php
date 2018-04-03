@@ -9,9 +9,6 @@ $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
 
 $api_version = $_POST["api_version"];
 $notification_token = $_POST["notification_token"];
-$opts = $_POST["opts"];
-$mail = $_POST["payer_email"];
-$aux = 0;
 try {
   if ($api_version == '1.3') {
     $configuration = new Khipu\Configuration();
@@ -34,9 +31,7 @@ try {
 
           $post = array(
               'email' => 'rgarafulicm@gmail.com',
-              'field[1,0]' => 'hola',
-              'field[2,0]' => $opts,
-              'field[11,0]' => $aux
+              'field[2,0]' => $_GET['mail'],
           );
 
           $query = "";
