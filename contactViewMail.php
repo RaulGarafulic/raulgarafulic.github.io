@@ -42,6 +42,5 @@
   $result = json_decode($response, true);
 
   // The entire result printed out
-  // echo json_encode ($result);
-  echo ($contact->mail);
+  echo json_encode ($result);
 ?>
