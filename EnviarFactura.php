@@ -2,6 +2,8 @@
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
   $contact = json_decode(file_get_contents("php://input"));
+  // echo $contact->mail;
+  // echo $contact->invoiceId;
   // $contact = new stdClass ();
   // $contact->mail = 'rgarafulicm@gmail.com';
   // $contact->invoiceId = 2;
@@ -24,7 +26,7 @@
     CURLOPT_HTTPHEADER => array(
       "Cache-Control: no-cache",
       "Accept: application/problem+json",
-      "Authorization: Bearer " . $contact->tok,
+      "Authorization: Bearer null",
       "Content-Type: application/json"
     )
   ));
