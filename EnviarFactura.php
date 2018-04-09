@@ -6,7 +6,7 @@
   // echo $contact->invoiceId;
   // $contact = new stdClass ();
   // $contact->mail = 'rgarafulicm@gmail.com';
-  // $contact->invoiceId = 2;
+  // $contact->invoiceId = 303235;
   $url = "https://link.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail";
   $curl = curl_init();
   curl_setopt_array($curl, array(
@@ -17,8 +17,6 @@
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-    CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => "hola",
     CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_SSL_VERIFYPEER => 0,
     CURLOPT_CAINFO => __DIR__.'/STAR_kraken_bo.crt',
@@ -26,7 +24,7 @@
     CURLOPT_HTTPHEADER => array(
       "Cache-Control: no-cache",
       "Accept: application/problem+json",
-      "Authorization: Bearer null",
+      "Authorization: Bearer " . $contact->tok,
       "Content-Type: application/json"
     )
   ));
