@@ -1,7 +1,7 @@
 <?php
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
-	$data = json_decode(file_get_contents("php://input"));
+	$contact = json_decode(file_get_contents("php://input"));
 
   // $url = 'https://acme13810.api-us1.com';
   $url = 'https://paginasiete.api-us1.com';
@@ -10,7 +10,7 @@
     // 'api_key'      => 'c14306a12b1aa7f1ef71961c44f51e581ab07dc4eea3f2863cce6d960f668dcd5c610cd3',
     'api_action'   => 'contact_view_email',
     'api_output'   => 'json',
-    'email'        => $data->mail,
+    'email'        => $contact->mail,
   );
 
   $query = "";
@@ -42,6 +42,6 @@
   $result = json_decode($response, true);
 
   // The entire result printed out
-  echo json_encode ($result);
-
+  // echo json_encode ($result);
+  echo ($contact->mail);
 ?>
