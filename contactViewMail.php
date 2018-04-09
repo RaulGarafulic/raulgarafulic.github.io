@@ -2,7 +2,6 @@
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
 	$data = json_decode(file_get_contents("php://input"));
-  $data->mail = 'rgarafulicm@gmail.com';
 
   // $url = 'https://acme13810.api-us1.com';
   $url = 'https://paginasiete.api-us1.com';
