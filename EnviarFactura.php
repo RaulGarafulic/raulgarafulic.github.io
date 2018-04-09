@@ -2,10 +2,14 @@
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
   $contact = json_decode(file_get_contents("php://input"));
+  // $contact = new stdClass ();
+  // $contact->mail = 'rgarafulicm@gmail.com';
+  // $contact->invoiceId = 2;
+  $url = "https://link.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail";
   $curl = curl_init();
   curl_setopt_array($curl, array(
     CURLOPT_PORT => "8443",
-    CURLOPT_URL => "https://link.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail",
+    CURLOPT_URL => $url,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
