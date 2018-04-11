@@ -1,11 +1,11 @@
 <?php
   header ('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header ("Access-Control-Allow-Headers: Content-Type, Authorization");
-  // $contact = json_decode (file_get_contents ("php://input"));
-  $contact = new stdClass ();
-  $contact->mail = 'rgarafulicm@gmail.com';
-  $contact->invoiceId = 303235;
-  $contact->tok = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2ZDJhOHYiLCJhdXRoIjoiUk9MRV9JTlRFR1JBVElPTiIsImV4cCI6MTUyMzM2OTEyNn0.JXyf_h-3NG-niPPuJlk6Bag072QKrkylFpHPgKixCb0GFjH0DPvkatq_jG0YE4aLcp7cFGIjVwdIZYCTelUEsg';
+  $contact = json_decode (file_get_contents ("php://input"));
+  // $contact = new stdClass ();
+  // $contact->mail = 'rgarafulicm@gmail.com';
+  // $contact->invoiceId = 303235;
+  // $contact->tok = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2ZDJhOHYiLCJhdXRoIjoiUk9MRV9JTlRFR1JBVElPTiIsImV4cCI6MTUyMzM2OTEyNn0.JXyf_h-3NG-niPPuJlk6Bag072QKrkylFpHPgKixCb0GFjH0DPvkatq_jG0YE4aLcp7cFGIjVwdIZYCTelUEsg';
   $url = "https://link.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail";
   $curl = curl_init ();
   curl_setopt_array ($curl, array (
