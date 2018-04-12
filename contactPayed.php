@@ -15,7 +15,8 @@
       'field[20,0]' => $contact->prod,
       'field[21,0]' => 'Factura contabilizada',
       'field[29,0]' => $contact->ini,
-      'field[30,0]' => $contact->fini
+      'field[30,0]' => $contact->fini,
+      'p[12]' => 12
   );
 
   $query = "";
