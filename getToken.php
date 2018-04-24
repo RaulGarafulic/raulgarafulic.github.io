@@ -6,14 +6,14 @@
 
   curl_setopt_array($curl, array(
     CURLOPT_PORT => "8443",
-    CURLOPT_URL => "https://link.kraken.bo:8443/api/authenticate",
+    CURLOPT_URL => "https://power.kraken.bo:8443/api/authenticate",
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => "",
     CURLOPT_MAXREDIRS => 10,
     CURLOPT_TIMEOUT => 30,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => "POST",
-    CURLOPT_POSTFIELDS => "{\"username\": \"6d2a8v\",\"password\": \"2S7RW1DZYr5uREJcxgNi\",\"rememberMe\": false}",
+    CURLOPT_POSTFIELDS => "{\"username\": \"qrfhk0\",\"password\": \"PjvDFWlNB9pjdJ0PhAY7\",\"rememberMe\": false}",
     CURLOPT_SSL_VERIFYHOST => 0,
     CURLOPT_SSL_VERIFYPEER => 0,
     CURLOPT_HTTPHEADER => array(

@@ -6,7 +6,7 @@
   // $contact->mail = 'rgarafulicm@gmail.com';
   // $contact->invoiceId = 303235;
   // $contact->tok = 'eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI2ZDJhOHYiLCJhdXRoIjoiUk9MRV9JTlRFR1JBVElPTiIsImV4cCI6MTUyMzM2OTEyNn0.JXyf_h-3NG-niPPuJlk6Bag072QKrkylFpHPgKixCb0GFjH0DPvkatq_jG0YE4aLcp7cFGIjVwdIZYCTelUEsg';
-  $url = "https://link.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail";
+  $url = "https://power.kraken.bo:8443/api/kraken/" . $contact->mail . "/" . $contact->invoiceId . "/send-mail";
   $curl = curl_init ();
   curl_setopt_array ($curl, array (
     CURLOPT_PORT => "8443",

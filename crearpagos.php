@@ -2,8 +2,8 @@
   header('Access-Control-Allow-Origin: https://p7vip-9d6eb.firebaseapp.com', false);
   header("Access-Control-Allow-Headers: Content-Type, Authorization");
   $contact = json_decode(file_get_contents("php://input"));
-  $receiver_id = 162163;
-  $secret = '2bd49ecf95c4375dc3e09e89d98cf284d9420939';
+  $receiver_id = 148188;
+  $secret = '0909c0e1ea5198b04c59fe2a425ab7841a190233';
   require __DIR__ . '/vendor/autoload.php';
   $price = (int) $contact->price;
   $configuration = new Khipu\Configuration();
@@ -18,7 +18,7 @@
       "transaction_id" => "MTI-100",
       "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante",
       "cancel_url" => "http://www.paginasiete.bo",
-      "picture_url" => "http://mi-ecomerce.com/pictures/foto-producto.jpg",
+      "picture_url" => "https://p7vip-9d6eb.firebaseapp.com/assets/P7VIPlogo.jpg",
       "notify_url" => "https://p7vip.xyz/recibirpago.php?mail=".$contact->mail,
       "notify_api_version" => "1.3",
       "payer_email" => $contact->mail

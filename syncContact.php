@@ -11,7 +11,7 @@ $params = array(
 $post = array(
     'email'                    => 'rgarafulicm@gmail.com',
     'tags'                     => 'api',
-    'field[21,0]'           => 'Factura pagada',
+    'field[21,0]'              => 'Factura pagada',
 );
 
 $query = "";
