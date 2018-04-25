@@ -16,6 +16,7 @@ $params = array (
 $post = array (
     'email' => $contact->mail,
     'first_name' => $contact->name,
+    'last_name' => ' ',
     'phone' => $contact->phone,
     'p[11]' => 11
 );
