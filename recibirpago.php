@@ -9,6 +9,7 @@ require __DIR__ . '/vendor/autoload.php';
 $receiver_id = 148188;
 $secret = '0909c0e1ea5198b04c59fe2a425ab7841a190233';
 $mail = $_GET["mail"];
+$prod = $_GET["product"];
 $api_version = $_POST["api_version"];
 $notification_token = $_POST["notification_token"];
 try {
@@ -34,6 +35,7 @@ try {
           $post = array(
               'email' => $mail,
               'field[21,0]' => 'Factura pagada',
+              'field[20,0]' => $contact->prod
           );
 
           $query = "";

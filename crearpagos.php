@@ -19,7 +19,7 @@
       "return_url" => "https://p7vip-9d6eb.firebaseapp.com/comprobante",
       "cancel_url" => "http://www.paginasiete.bo",
       "picture_url" => "https://p7vip-9d6eb.firebaseapp.com/assets/P7VIPlogo.jpg",
-      "notify_url" => "https://p7vip.xyz/recibirpago.php?mail=".$contact->mail,
+      "notify_url" => "https://p7vip.xyz/recibirpago.php?mail=".$contact->mail."&product=".$contact->prod, // se está pasando la segunda variable para comprobar qué se está pagando y cuánto.
       "notify_api_version" => "1.3",
       "payer_email" => $contact->mail,
       "payer_name" => $contact->name
