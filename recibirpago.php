@@ -31,11 +31,11 @@ try {
               'api_action'   => 'contact_sync',
               'api_output'   => 'serialize',
           );
-
+          $product = str_replace(' ', '-', strtolower($contact->prod));
           $post = array(
               'email' => $mail,
               'field[21,0]' => 'Factura pagada',
-              'field[20,0]' => $contact->prod
+              'field[20,0]' => $product
           );
 
           $query = "";
