@@ -31,7 +31,7 @@ try {
               'api_action'   => 'contact_sync',
               'api_output'   => 'serialize',
           );
-          $product = str_replace(' ', '-', strtolower($contact->prod));
+          $product = str_replace('_', ' ', strtolower($contact->prod));
           $post = array(
               'email' => $mail,
               'field[21,0]' => 'Factura pagada',
